@@ -118,11 +118,30 @@
         .option {
             background: #fff0f5;
             border: 2px solid #e6005c;
-            border-radius: 10px;
-            padding: 12px;
-            margin-top: 15px;
+            border-radius: 8px;
+            padding: 8px 10px;
+            margin-top: 8px;
             cursor: pointer;
+            font-size: 14px;
+            width: 70%;
+            height : 70%;
+            margin-left: auto;
+            margin-right: auto;
         }
+        .option {
+    background: #fff0f5;
+    border: 2px solid #e6005c;
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin-top: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 70%;
+    height: 20px;           /* Center text vertically */
+    align-items: center;       /* Vertical center */
+    justify-content: center;   /* Horizontal center */
+}
+
 
         .option:hover {
             background: #e6005c;
@@ -192,6 +211,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="card">
         <form id="valentineForm">
@@ -202,7 +222,8 @@
                 <h2 id="firstHeading">Will you be mine 💖?</h2>
                 <p>Life is an incredible journey, and after marriage, I want to spend every single second of it with
                     you. For now, I’m sorry for everything — for making you wait, for the scolding, and for all the
-                    tough moments. But no matter what… even then, I’ll still scold you — because I’m in love with you. ❤️ </p>
+                    tough moments. But no matter what… even then, I’ll still scold you — because I’m in love with you.
+                    ❤️ </p>
                 <button type="button" class="yes" onclick="goSecondPage()">Yes 💖</button>
                 <button type="button" class="no" id="noBtn" onclick="handleNo()">No</button>
             </div>
@@ -211,7 +232,8 @@
                 <img class="sticker"
                     src="https://github.com/Jagadeesh-T440/Images/blob/main/Sticker/hugcouple.png?raw=true">
                 <h2>Happy Valentine’s Day, Thangooo! 💝</h2>
-                <p>Every second with you is a celebration of love, and you are the spark that turns my world into light ✨</p>
+                <p>Every second with you is a celebration of love, and you are the spark that turns my world into light
+                    ✨</p>
                 <button type="button" class="yes" onclick="goPage3()">See my gifts 🎁</button>
             </div>
 
@@ -247,17 +269,19 @@
                 <img class="sticker"
                     src="https://github.com/Jagadeesh-T440/Images/blob/main/Sticker/love_you.png?raw=true">
                 <h2>Our Memories 💞</h2>
-                <div id="memoryContainer" style="height:400px; display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                <div id="memoryContainer"
+                    style="height:400px; display:flex; flex-direction:column; justify-content:center; align-items:center;">
                     <img id="memoryImage" src="" style="width:300px; border-radius:15px;">
                 </div>
-                
+
                 <div id="memoryButtons" style="margin-top:1px;">
                     <button class="no" onclick="prevMemory(event)"
                         style="font-size:16px; margin-right:1px;">Previous</button>
                     <button class="yes" onclick="nextMemory(event)" style="font-size:16px;">Next</button>
                 </div>
 
-                <div id="memoryEndMessage" style=" margin-top:20px; color:#e6005c;font-weight:bold; display:none; font-size:20px; text-align:center;">
+                <div id="memoryEndMessage"
+                    style=" margin-top:20px; color:#e6005c;font-weight:bold; display:none; font-size:20px; text-align:center;">
                     ❤️ You have seen all memories! <br><br>
                     <div style="display:flex; justify-content:center; gap:15px;">
                         <button type="button" class="yes" onclick="finalThanks()">Thank You</button>
@@ -270,16 +294,25 @@
                     style="width:220px; border-radius:18px; margin-bottom:1px;">
 
                 <p style="font-size:13px; line-height:1.8; color:#201f1f;">
-                    “In the journey ahead of us 💖, I see a future filled with warmth, laughter, and countless moments that 
-                    we will treasure forever♾️. No matter how unpredictable life becomes, I believe in us and in the love we share💞. 
-                    We will grow together💯, learn from each other, and support one another through every challenge and every success. 
-                    Our love will be the strength that lifts us on difficult days and the joy that makes the happiest moments even 
-                    brighter🥳. I look forward to building dreams with you, celebrating our achievements💯, and finding happiness in the 
-                    smallest things—late conversations, shared smiles😊, and quiet moments of understanding. With you by my side, the 
-                    future feels hopeful, exciting, and full of endless possibilities. I promise to keep motivating you, loving you🥰
-                    deeply, and choosing you every single day🤗, because our story is the one I want to live for a lifetime.”
-                    “I will always love you—even when I scold you😂. I’ll always be with you💞, and after two years, Every Second we’ll enjoy everything together😁. 
-                    <b>Happy Valentine’s Day💘 My Real Gem.</b>"
+                    “In the journey ahead of us 💖, I see a future filled with warmth, laughter, and countless moments
+                    that we will treasure forever♾️. No matter how unpredictable life becomes, I believe in us and in
+                    the
+                    love we share💞. We will grow together💯, learn from each other, and support one another through
+                    every challenge and
+                    every success. Our love will be the strength that lifts us on difficult days and the joy that makes
+                    the happiest
+                    moments even brighter🥳. I look forward to building dreams with you, celebrating our achievements💯,
+                    and finding
+                    happiness in the smallest things—late conversations, shared smiles😊, and quiet moments of
+                    understanding. With you by
+                    my side, the future feels hopeful, exciting, and full of endless possibilities. I promise to keep
+                    motivating you,
+                    loving you🥰 deeply, and choosing you every single day🤗, because our story is the one I want to
+                    live for a
+                    lifetime. I will always love you—even when I scold you😂. I'll always be with you💞, and after two
+                    years,
+                    Every Second we'll enjoy everything together😁.
+                    <b>Happy Valentine's Day💘 My Gem.</b>”
                 </p>
 
                 <button type="button" class="yes" style="width:320px; height:40px; font-size:15px;"
@@ -292,11 +325,20 @@
                 <div id="options"></div>
 
                 <input type="hidden" name="reply_to" value="jagathiyagu540@gmail.com">
-                <input type="hidden" name="favourite_image">
-                <input type="hidden" name="favourite_dish">
-                <input type="hidden" name="favourite_song">
-                <input type="hidden" name="movie_mood">
+                <input type="hidden" name="first_like">
+                <input type="hidden" name="first_impression">
+                <input type="hidden" name="say_love_first">
+                <input type="hidden" name="love_song">
+                <input type="hidden" name="date_place">
+                <input type="hidden" name="jealous">
+                <input type="hidden" name="realize_special">
+                <input type="hidden" name="movie_title">
+                <input type="hidden" name="romantic_thing">
+                <input type="hidden" name="dream_vacation">
+                <input type="hidden" name="never_forgot">
+                <input type="hidden" name="promise_me">
                 <input type="hidden" name="like_level">
+                <input type="hidden" name="love_message">
 
                 <div id="doneScreen" style="display:none; text-align:center; margin-top:50px;">
                     <img src="https://github.com/Jagadeesh-T440/Images/blob/main/Sticker/hugcouple.png?raw=true"
@@ -313,7 +355,7 @@
             <div id="backVideoCard" style="display:none; text-align:center; margin-top: 20px;">
                 <div class="video-card">
                     <img src="https://github.com/Jagadeesh-T440/Images/blob/main/Sticker/final_video.png?raw=true"
-                    style="width:120px; margin-bottom:10px;" alt="Done with love sticker">
+                        style="width:120px; margin-bottom:10px;" alt="Done with love sticker">
                     <button class="play-video-btn"
                         onclick="window.open('https://www.youtube.com/watch?v=fCSdKqVD93Y','_blank')">
                         ▶ Play Our Special Video
@@ -378,20 +420,77 @@
 
         const questions = [
             {
-                q: "💖 Favourite Image?",
-                type: "image",
-                field: "favourite_image",
-                options: [
-                    { value: "Image", img: "https://github.com/Jagadeesh-T440/Images/blob/main/image%20(3)%201.png?raw=true" },
-                    { value: "Couple", img: "https://github.com/Jagadeesh-T440/Images/blob/main/profile.png?raw=true" },
-                    { value: "Rose", img: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800" }
-                ]
+                q: "When did you first start liking me? 💕",
+                field: "first_like",
+                options: ["First time I saw you 😍", "After talking for few days 🥰", "I’m still thinking 🤭", "Others ✍️"]
             },
-            { q: "🍕 Favourite Dish?", field: "favourite_dish", options: ["Pizza 🍕", "Biryani 🍛", "Burger 🍔"] },
-            { q: "🎵 Favourite Song?", field: "favourite_song", options: ["Romantic 💕", "Melody 🎶", "Rock 🎸"] },
-            { q: "🎬 Movie Mood?", field: "movie_mood", options: ["Love ❤️", "Comedy 😂", "Action 🔥"] },
-            { q: "💖 How much do you like me?", field: "like_level", options: ["So much 😍", "Too much 🥰", "Infinity ♾️"] }
+            {
+                q: "What was your first impression of me? 🌸",
+                field: "first_impression",
+                options: ["So cuteee 😚", "Attitude king 😎", "Innocent face but dangerous 😜", "Others ✍️"]
+            },
+            {
+                q: "Who says “I love you” first? 💌",
+                field: "say_love_first",
+                options: ["Me 😌", "You 🥺", "Both at same time 💞", "Others ✍️"]
+            },
+            {
+                q: "Our Love Song Type? 🎶",
+                field: "love_song",
+                options: ["💖En Uyire Nee thaandi - Sivantha Kangal🤗", "😌Kaadhal Aasai Yaarai Vitatho - Anjaan💘", "🥳Urave En Aasa Urave - Lubber Bandhu💞", "Others ✍️"]
+            },
+            {
+                q: "If we go on a date, what would you choose? 🍽️",
+                field: "date_place",
+                options: ["Movie night 🍿", "Street food date 🌮", "Long Ride 🥹", "Others ✍️"]
+            },
+            {
+                q: "Who gets jealous faster? 😏",
+                field: "jealous",
+                options: ["Me 😌", "You 🥺", "Both secretly 💞", "Others ✍️"]
+            },
+            {
+                q: "When did you realize I’m special? 💕",
+                field: "realize_special",
+                options: ["First sight itself 😍", "After few talks 🥰", "Still analyzing 🤭", "Others ✍️"]
+            },
+            {
+                q: "Our love story movie title? 🎬",
+                field: "movie_title",
+                options: ["Forever & Always 💍", "Crazy in Love 🤪", "Love vs Torture 😂", "Others ✍️"]
+            },
+            {
+                q: "Most romantic thing you’ll do for me? 💌",
+                field: "romantic_thing",
+                options: ["Long love letter 📝", "Send memes 😂", "Surprise proposal 💍", "Others ✍️"]
+            },
+            {
+                q: "Dream vacation together? 🌍",
+                field: "dream_vacation",
+                options: ["Inside India🗼", "Foreign Place🌊", "Anywhere with you 💕", "Others ✍️"]
+            },
+            {
+                q: "What moment with me will you never forget? 🌙",
+                field: "never_forgot",
+                options: ["Our first conversation 😁", "Our fight 🤯", "Every memory feels special 😉", "Others ✍️"]
+            },
+            {
+                q: "What is one thing you silently promise me? 🤞",
+                field: "promise_me",
+                options: ["Never leave 🤞", "protect your heart💖", "grow with you 🌍", "Others ✍️"]
+            },
+            {
+                q: "💖 How Much Do You Like Me?",
+                field: "like_level",
+                options: ["So much 🤪", "More than myself 💖", "Infinity ♾️", "Others ✍️"]
+            },
+            {
+                q: "💖 one message for me from your heart. Don't think… just type what you truly feel💯",
+                field: "love_message",
+                type: "text"
+            }
         ];
+
 
         let current = 0;
         function loadQuestion() {
@@ -399,27 +498,75 @@
             document.getElementById("question").innerText = q.q;
             const optionsDiv = document.getElementById("options");
             optionsDiv.innerHTML = "";
-
-            if (q.type === "image") {
-                const c = document.createElement("div");
-                c.className = "image-options";
-                q.options.forEach(o => {
-                    const d = document.createElement("div");
-                    d.className = "image-option";
-                    d.innerHTML = `<img src="${o.img}">`;
-                    d.onclick = () => selectOption(q.field, o.value);
-                    c.appendChild(d);
-                });
-                optionsDiv.appendChild(c);
-            } else {
-                q.options.forEach(o => {
-                    const d = document.createElement("div");
-                    d.className = "option";
-                    d.innerText = o;
-                    d.onclick = () => selectOption(q.field, o);
-                    optionsDiv.appendChild(d);
-                });
+            if (q.type === "text") {
+                const container = document.createElement("div");
+                container.style.marginTop = "20px";
+                container.innerHTML = `
+        <textarea id="textAnswer"
+            placeholder="Type your answer here ❤️"
+            rows="6"
+            style="
+                width:85%;
+                height:150px;
+                padding:12px;
+                border-radius:12px;
+                border:2px solid #e6005c;
+                font-size:15px;
+                font-family:'Times New Roman', Times, serif;
+                resize:none;
+                text-align:justify;
+                line-height:1.6;
+            ">
+        </textarea>
+        <br><br>
+        <button class="yes" type="button">Submit 💖</button>
+    `;
+                container.querySelector("button").onclick = function () {
+                    const value = document.getElementById("textAnswer").value.trim();
+                    if (value === "") {
+                        alert("Don’t cheat 😡 — If you select “Other”, you must type something related to the question 💕");
+                        return;
+                    }
+                    selectOption(q.field, value);
+                };
+                optionsDiv.appendChild(container);
+                return;
             }
+            q.options.forEach(o => {
+                const d = document.createElement("div");
+                d.className = "option";
+                d.innerText = o;
+                d.onclick = () => {
+                    if (o === "Others ✍️") {
+                        showOtherInput(q.field);
+                    } else {
+                        selectOption(q.field, o);
+                    }
+                };
+                optionsDiv.appendChild(d);
+            });
+        }
+
+        function showOtherInput(field) {
+            const optionsDiv = document.getElementById("options");
+            const existingInput = document.getElementById("otherInputContainer");
+            if (existingInput) {
+                existingInput.remove();
+            }
+            const container = document.createElement("div");
+            container.id = "otherInputContainer";
+            container.style.marginTop = "20px";
+            container.innerHTML = `<input type="text" id="otherTextBox" placeholder="Type your answer here ❤️" style="width:80%; heigth: 150px; padding:10px; border-radius:8px; border:2px solid #e6005c;">
+        <br><br> <button class="yes" type="button">Submit 💖</button> `;
+            container.querySelector("button").onclick = function () {
+                const value = document.getElementById("otherTextBox").value.trim();
+                if (value === "") {
+                    alert("Don’t cheat 😡 — If you select “Other”, you must type something related to the question 💕");
+                    return;
+                }
+                selectOption(field, value);
+            };
+            optionsDiv.appendChild(container);
         }
 
         function selectOption(field, value) {
