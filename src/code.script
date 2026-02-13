@@ -1,0 +1,386 @@
+<script>
+        (function () {
+            emailjs.init("nVwi7vLAOpQnygoJl");
+        })();
+
+        const noTexts = [
+            "See Sticker - You Don't Want",
+            "Nope? My heart just cracked 💔",
+            "Are you playing hard to get?",
+            "This button is getting tired 😴",
+            "Come on… just one click Yes🥺",
+            "Yes 💖"
+        ];
+
+        const noStickers = [
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Sticker/monkey.png?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Sticker/HeartCracked.png?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Sticker/why.png?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Sticker/babyCry.png?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Sticker/babyCryingmore.png?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Sticker/breakBear.png?raw=true"
+        ];
+
+        let noIndex = 0;
+        function handleNo() {
+            const noBtn = document.getElementById("noBtn");
+            const sticker = document.getElementById("mainSticker");
+            noBtn.innerText = noTexts[noIndex];
+            sticker.src = noStickers[noIndex];
+            noIndex++;
+
+            if (noIndex === noTexts.length) {
+                document.getElementById("firstHeading").innerText =
+                    "You crossed your limits. Silently click Yes.😡";
+                noBtn.onclick = goSecondPage;
+            }
+        }
+
+        function goSecondPage() {
+            document.getElementById("page1").style.display = "none";
+            document.getElementById("page2").style.display = "block";
+        }
+
+        function startQuestions() {
+            document.getElementById("page2").style.display = "none";
+            document.getElementById("page3").style.display = "none";
+            document.getElementById("questions").style.display = "block";
+            loadQuestion();
+        }
+
+        const questions = [
+            {
+                q: "When did you first start liking me? 💕",
+                field: "first_like",
+                options: ["First time I saw you 😍", "After talking for few days 🥰", "I’m still thinking 🤭", "Others ✍️"]
+            },
+            {
+                q: "What was your first impression of me? 🌸",
+                field: "first_impression",
+                options: ["So cuteee 😚", "Attitude king 😎", "Innocent face but dangerous 😜", "Others ✍️"]
+            },
+            {
+                q: "Who says “I love you” first? 💌",
+                field: "say_love_first",
+                options: ["Me 😌", "You 🥺", "Both at same time 💞", "Others ✍️"]
+            },
+            {
+                q: "Our Love Song Type? 🎶",
+                field: "love_song",
+                options: ["💖En Uyire Nee thaandi - Sivantha Kangal🤗", "😌Kaadhal Aasai Yaarai Vitatho - Anjaan💘", "🥳Urave En Aasa Urave - Lubber Bandhu💞", "Others ✍️"]
+            },
+            {
+                q: "If we go on a date, what would you choose? 🍽️",
+                field: "date_place",
+                options: ["Movie night 🍿", "Street food date 🌮", "Long Ride 🥹", "Others ✍️"]
+            },
+            {
+                q: "Who gets jealous faster? 😏",
+                field: "jealous",
+                options: ["Me 😌", "You 🥺", "Both secretly 💞", "Others ✍️"]
+            },
+            {
+                q: "When did you realize I’m special? 💕",
+                field: "realize_special",
+                options: ["First sight itself 😍", "After few talks 🥰", "Still analyzing 🤭", "Others ✍️"]
+            },
+            {
+                q: "Our love story movie title? 🎬",
+                field: "movie_title",
+                options: ["Forever & Always 💍", "Crazy in Love 🤪", "Love vs Torture 😂", "Others ✍️"]
+            },
+            {
+                q: "Most romantic thing you’ll do for me? 💌",
+                field: "romantic_thing",
+                options: ["Long love letter 📝", "Send memes 😂", "Surprise proposal 💍", "Others ✍️"]
+            },
+            {
+                q: "Dream vacation together? 🌍",
+                field: "dream_vacation",
+                options: ["Inside India🗼", "Foreign Place🌊", "Anywhere with you 💕", "Others ✍️"]
+            },
+            {
+                q: "What moment with me will you never forget? 🌙",
+                field: "never_forgot",
+                options: ["Our first conversation 😁", "Our fight 🤯", "Every memory feels special 😉", "Others ✍️"]
+            },
+            {
+                q: "What is one thing you silently promise me? 🤞",
+                field: "promise_me",
+                options: ["Never leave 🤞", "protect your heart💖", "grow with you 🌍", "Others ✍️"]
+            },
+            {
+                q: "💖 How Much Do You Like Me?",
+                field: "like_level",
+                options: ["So much 🤪", "More than myself 💖", "Infinity ♾️", "Others ✍️"]
+            },
+            {
+                q: "💖 One message for me from your heart. Don't think… just type what you truly feel💯",
+                field: "love_message",
+                type: "text"
+            }
+        ];
+
+
+        let current = 0;
+        function loadQuestion() {
+            const q = questions[current];
+            document.getElementById("question").innerText = q.q;
+            const optionsDiv = document.getElementById("options");
+            optionsDiv.innerHTML = "";
+            if (q.type === "text") {
+                const container = document.createElement("div");
+                container.style.marginTop = "20px";
+                container.innerHTML = `
+        <textarea id="textAnswer"
+            placeholder="Type your answer here ❤️"
+            rows="6"
+            style="
+                width:85%;
+                height:150px;
+                padding:12px;
+                border-radius:12px;
+                border:2px solid #e6005c;
+                font-size:15px;
+                font-family:'Times New Roman', Times, serif;
+                resize:none;
+                text-align:justify;
+                line-height:1.6;
+            ">
+        </textarea>
+        <br><br>
+        <button class="yes" type="button">Submit 💖</button>
+    `;
+                container.querySelector("button").onclick = function () {
+                    const value = document.getElementById("textAnswer").value.trim();
+                    if (value === "") {
+                        alert("Don’t cheat 😡 — If you select “Other”, you must type something related to the question 💕");
+                        return;
+                    }
+                    selectOption(q.field, value);
+                };
+                optionsDiv.appendChild(container);
+                return;
+            }
+            q.options.forEach(o => {
+                const d = document.createElement("div");
+                d.className = "option";
+                d.innerText = o;
+                d.onclick = () => {
+                    if (o === "Others ✍️") {
+                        showOtherInput(q.field);
+                    } else {
+                        selectOption(q.field, o);
+                    }
+                };
+                optionsDiv.appendChild(d);
+            });
+        }
+
+        function showOtherInput(field) {
+            const optionsDiv = document.getElementById("options");
+            const existingInput = document.getElementById("otherInputContainer");
+            if (existingInput) {
+                existingInput.remove();
+            }
+            const container = document.createElement("div");
+            container.id = "otherInputContainer";
+            container.style.marginTop = "20px";
+            container.innerHTML = `<input type="text" id="otherTextBox" placeholder="Type your answer here ❤️" style="width:80%; heigth: 150px; padding:10px; border-radius:8px; border:2px solid #e6005c;">
+        <br><br> <button class="yes" type="button">Submit 💖</button> `;
+            container.querySelector("button").onclick = function () {
+                const value = document.getElementById("otherTextBox").value.trim();
+                if (value === "") {
+                    alert("Don’t cheat 😡 — If you select “Other”, you must type something related to the question 💕");
+                    return;
+                }
+                selectOption(field, value);
+            };
+            optionsDiv.appendChild(container);
+        }
+
+        function selectOption(field, value) {
+            document.querySelector(`[name="${field}"]`).value = value;
+            current++;
+
+            if (current < questions.length) {
+                loadQuestion();
+            } else {
+                document.getElementById("question").style.display = "none";
+                document.getElementById("options").style.display = "none";
+                document.getElementById("doneScreen").style.display = "block";
+            }
+        }
+
+        function goPage3() {
+            document.getElementById("page2").style.display = "none";
+            document.getElementById("page3").style.display = "block";
+        }
+
+        function openMemories() {
+            document.getElementById("page3").style.display = "none";
+            document.getElementById("memoriesPage").style.display = "block";
+            const text = document.getElementById("memoryText");
+            let pos = -200;
+            setInterval(() => {
+                pos += 1;
+                text.style.bottom = pos + "px";
+
+                if (pos > text.scrollHeight) {
+                    pos = -200;
+                }
+            }, 50);
+        }
+
+        const memories = [
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/1741780286960.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/20240831_172724.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/1743249730654.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/20241026_164437.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/IMG-20240319-WA0010.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/IMG-20241130-WA0027.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/20240630_134836.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/1745473158532.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/IMG-20240422-WA0007.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/IMG-20250126-WA0089.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/IMG-20240518-WA0029.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/IMG-20250201-WA0013.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/IMG_20250503_133955.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/IMG-20250316-WA0032.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/IMG_20231021_153009_043.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/IMG_20250126_164217.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/IMG_20250814_140622.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/IMG_20250202_215020.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/IMG_20250503_134035.jpg?raw=true",
+            "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/IMG_20260209_181116.jpg?raw=true"
+        ];
+
+        let currentMemory = 0;
+        function openMemories() {
+            document.querySelector(".card").classList.add("memories-mode");
+            document.getElementById("page3").style.display = "none";
+            document.getElementById("memoriesPage").style.display = "block";
+            currentMemory = 0;
+            document.getElementById("memoryEndMessage").style.display = "none";
+            document.getElementById("memoryButtons").style.display = "block";
+            resetMemoryContainer();
+            showMemory();
+        }
+
+        function showMemory() {
+            const img = document.getElementById("memoryImage");
+            const card = document.querySelector(".card");
+            img.src = memories[currentMemory];
+
+            if (currentMemory === memories.length - 1) {
+                document.getElementById("memoryEndMessage").style.display = "block";
+                document.getElementById("memoryButtons").style.display = "none";
+                card.classList.add("hide-memory-image");
+            } else {
+                document.getElementById("memoryEndMessage").style.display = "none";
+                document.getElementById("memoryButtons").style.display = "block";
+
+                card.classList.remove("hide-memory-image");
+            }
+        }
+
+        function nextMemory(event) {
+            event.preventDefault();
+            if (currentMemory < memories.length - 1) {
+                currentMemory++;
+                showMemory();
+            }
+        }
+
+        function prevMemory(event) {
+            event.preventDefault();
+            if (currentMemory > 0) {
+                currentMemory--;
+                showMemory();
+            }
+        }
+
+        function finalThanks() {
+            showFinalMemory(currentMemory, "https://github.com/Jagadeesh-T440/Images/blob/main/Photos/31b1052f-2b6a-42b0-8a70-b6981d8efab4.png?raw=true");
+        }
+
+        function showFinalMemory(memoryIndex, imageURL) {
+            const container = document.getElementById("memoryContainer");
+            const originalHTML = container.innerHTML;
+
+            container.style.height = "80vh";
+            container.style.flexDirection = "column";
+            container.style.justifyContent = "center";
+            container.style.alignItems = "center";
+            container.innerHTML = `<img src="${imageURL}" style="max-width:90%; max-height:90%; border-radius:20px;">`;
+
+            document.getElementById("memoryEndMessage").style.display = "none";
+            document.getElementById("memoryButtons").style.display = "none";
+
+            setTimeout(() => {
+                container.innerHTML = originalHTML;
+                container.style.height = "400px";
+                container.style.flexDirection = "column";
+                container.style.justifyContent = "center";
+                container.style.alignItems = "center";
+
+                document.getElementById("memoriesPage").style.display = "none";
+                document.getElementById("page3").style.display = "block";
+                document.querySelector(".card").classList.remove("memories-mode");
+            }, 5000);
+        }
+
+        function resetMemoryContainer() {
+            const container = document.getElementById("memoryContainer");
+            container.innerHTML = `<img id="memoryImage" src="" style="width:300px; border-radius:15px; margin-bottom:15px;">`;
+            container.style.height = "400px";
+            container.style.flexDirection = "column";
+            container.style.justifyContent = "center";
+            container.style.alignItems = "center";
+        }
+
+        function openForYou() {
+            document.getElementById("page3").style.display = "none";
+            document.getElementById("forYouPage").style.display = "block"
+            document.querySelector(".card").classList.add("memories-mode");
+        }
+
+        function backToGifts() {
+            document.getElementById("forYouPage").style.display = "none";
+            document.getElementById("backVideoCard").style.display = "block";
+
+            const card = document.querySelector(".card");
+            if (card) {
+                card.classList.remove("memories-mode");
+            }
+        }
+
+        function stopBackVideo() {
+            const iframe = document.getElementById("backYoutubeVideo");
+            iframe.src = "";
+            document.getElementById("backVideoCard").style.display = "none";
+        }
+
+        function submitAndBack() {
+            sendMailThenRedirect();
+        }
+
+        function submitAndThanks() {
+            sendMailThenRedirect();
+        }
+
+        function sendMailThenRedirect() {
+            const form = document.getElementById("valentineForm");
+
+            emailjs.sendForm("service_aubl0nx", "template_auhr0z9", form).then(() => {
+                document.getElementById("questions").style.display = "none";
+                document.getElementById("doneScreen").style.display = "none";
+                document.querySelector(".card").classList.remove("memories-mode");
+                document.getElementById("page3").style.display = "block";
+
+                current = 0;
+                document.getElementById("question").style.display = "block";
+                document.getElementById("options").style.display = "block";
+            });
+        }
+    </script>
