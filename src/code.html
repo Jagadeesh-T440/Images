@@ -6,6 +6,7 @@
     <title>Valentine Special 💖</title>
 
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
 </head>
 
 <body>
@@ -44,19 +45,17 @@
                             style="width:80px; height:80px;"><br>
                         Moments of Us 💞
                     </button>
-
                     <button type="button" class="yes" style="width:240px; height:140px; font-size:15px;"
                         onclick="startQuestions()">
                         <img src="https://github.com/Jagadeesh-T440/Images/blob/main/Sticker/Quizz.png?raw=true"
                             style="width:80px; height:80px;"><br>
                         Love Challenge 😘
                     </button>
-
                     <button type="button" class="yes" style="width:240px; height:140px; font-size:15px;"
                         onclick="openForYou()">
                         <img src="https://github.com/Jagadeesh-T440/Images/blob/main/Sticker/for_you.png?raw=true"
                             style="width:80px; height:80px;"><br>
-                        Just for My Love 💌
+                        Just for You💞
                     </button>
                 </div>
             </div>
@@ -92,29 +91,18 @@
                 <p style="font-size:13px; line-height:1.8; color:#201f1f;">
                     “In the journey ahead of us 💖, I see a future filled with warmth, laughter, and countless moments
                     that we will treasure forever♾️. No matter how unpredictable life becomes, I believe in us and in
-                    the
-                    love we share💞. We will grow together💯, learn from each other, and support one another through
-                    every challenge and
-                    every success. Our love will be the strength that lifts us on difficult days and the joy that makes
-                    the happiest
-                    moments even brighter🥳. I look forward to building dreams with you, celebrating our achievements💯,
-                    and finding
-                    happiness in the smallest things—late conversations, shared smiles😊, and quiet moments of
-                    understanding. With you by
-                    my side, the future feels hopeful, exciting, and full of endless possibilities. I promise to keep
-                    motivating you,
-                    loving you🥰 deeply, and choosing you every single day🤗, because our story is the one I want to
-                    live for a
-                    lifetime. I will always love you—even when I scold you😂. I'll always be with you💞, and after two
-                    years,
-                    Every Second we'll enjoy everything together😁.
-                    <b>Happy Valentine's Day💘 My Gem.</b>”
+                    the love we share💞. We will grow together💯, learn from each other, and support one another through
+                    every challenge and every success. Our love will be the strength that lifts us on difficult days and the joy that makes
+                    the happiest moments even brighter🥳. I look forward to building dreams with you, celebrating our achievements💯,
+                    and finding happiness in the smallest things—late conversations, shared smiles😊, and quiet moments of
+                    understanding. With you by my side, the future feels hopeful, exciting, and full of endless possibilities. I promise to keep
+                    motivating you,loving you🥰 deeply, and choosing you every single day🤗, because our story is the one I want to
+                    live for a lifetime. I will always love you—even when I scold you😂. I'll always be with you💞, and after two
+                    years, Every Second we'll enjoy everything together😁.<b>Happy Valentine's Day💘 My Gem.</b>”
                 </p>
-
                 <button type="button" class="yes" style="width:320px; height:40px; font-size:15px;"
                     onclick="backToGifts()">🤗 Be Happy Thangoo... Thank You 🥳 </button>
             </div>
-
 
             <div id="questions" style="display:none;">
                 <h2 id="question"></h2>
@@ -136,18 +124,24 @@
                 <input type="hidden" name="like_level">
                 <input type="hidden" name="love_message">
 
+                <div id="questionNav" style="margin-top:20px; display:flex; align-items:center;">
+                    <button type="button" class="no" id="backBtn" onclick="goBackQuestion()">
+                        ⬅ Back
+                    </button>
+                    <button type="button" class="yes" id="submitBtn" style="display:none;">
+                        Submit 💖
+                    </button>
+                </div>
                 <div id="doneScreen" style="display:none; text-align:center; margin-top:50px;">
-                    <img src="https://github.com/Jagadeesh-T440/Images/blob/main/Sticker/hugcouple.png?raw=true"
+                    <img src="https://github.com/Jagadeesh-T440/Images/blob/main/Sticker/done.png?raw=true"
                         style="width:120px; margin-bottom:10px;" alt="Done with love sticker">
                     <h2 style="color:#e6005c;">💖 Done with Love</h2>
 
                     <div style="display:flex; justify-content:center; gap:20px; margin-top:50px;">
-                        <button type="button" class="no" onclick="submitAndBack()">Back</button>
-                        <button type="button" class="yes" onclick="submitAndThanks()">Thank You</button>
+                        <button type="button" class="yes" onclick="submitAndThanks()">Thank You 💘</button>
                     </div>
                 </div>
             </div>
-
             <div id="backVideoCard" style="display:none; text-align:center; margin-top: 20px;">
                 <div class="video-card">
                     <img src="https://github.com/Jagadeesh-T440/Images/blob/main/Sticker/final_video.png?raw=true"
@@ -163,6 +157,6 @@
             </div>
         </form>
     </div>
-</body>
 
+</body>
 </html>
